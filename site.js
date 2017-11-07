@@ -1,4 +1,4 @@
-var trainlinedata = [{
+var data = [{
   "staId": "40380",
   "stpId": "30374",
   "staNm": "Clark\/Lake",
@@ -22,3 +22,22 @@ var trainlinedata = [{
   "isDly": "0",
   "heading": "89"
 }]
+
+$('#locationform').on('submit', function(e) {
+  var data = $('#location').val();
+  if(data[location] !== undefined ) {
+    $('#results').append('<li><a href="' + data[location]["arrT"] + '">' +
+    location + '</a></li>');
+  } else {
+    $('#result').append('<li>' + location + ' not found: it may not be in the system yet; try "Galvin library"');
+  }
+  e.preventDefault();
+});
+$('#locationform').on('focus', function() {
+    console.log('The station entered is not found. No "e"');
+  });
+
+var today = new Date();
+var date = today.getFullYear() + ' '+ (today.getMonth()+1) + ' ' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date + ' ' + time;
