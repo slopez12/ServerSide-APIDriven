@@ -51,18 +51,20 @@ table {
 /* Beginning of my edit */
 
 h1 {
-  color: #B06660;
-  font-size: 2.5em;
+  color: #212930;
+  font-size: 2em;
+	line-height: 3em;
   font-weight: bold;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	padding-bottom: .5em;
 	padding-top: .5em;
 	text-align: center;
-	background-color: #D9A88F;
+	background-color: #868F98;
 }
 
 body {
-	background-color: #B06660;
+	background-color: #E3DCC0;
+	font-size: 18px;
 }
 
 #results {
@@ -70,39 +72,28 @@ body {
 	font-size: 1.5em;
 	display: block;
 	text-align: center;
-	padding-bottom: 1em;
+	padding-top: 1em;
 }
 
-#submit, #button {
-  color: black;
+#submit {
+  color: white;
+	font-size: 1em;
 	margin-top: .5em;
 	margin-bottom: .5em;
 	text-align: center;
-	background-color: white;
+	background-color: #212930;
 	padding: .5em;
 }
 
 #locationform {
-	width: 150px;
-	margin:auto;
-	padding-top: 1em;
+	padding-left: 8em;
+	padding-top: 2em;
 }
 
-#location, #trainline {
-	padding-top: 1em;
-	text-align: center;
-	font-size: 1em;
-	color: black;
-}
-
-#location {
-	padding-top: 1.5em;
-	padding-bottom: 1em;
-}
-
-#arrT {
-	padding-top: 1.5em;
-	padding-bottom: 1em;
-	display: flex;
-	flex-direction: row;
+.formstyle {
+	height: 45px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 8px;
+  margin: 0 10px 0 10px;
 }
