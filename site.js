@@ -9,8 +9,7 @@ var data = [{
   "isApp": "0",
   "isDly": "0",
   "heading": "123"
-}],
-[{
+}, {
   "staId": "40381",
   "stpId": "30375",
   "staNm": "Clark\/Lake",
