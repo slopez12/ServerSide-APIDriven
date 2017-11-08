@@ -29,6 +29,8 @@ $('#locationform').on('submit', function(e) {
   console.log("Form submitted!");
   var location = $('#location').val();
   console.log("Location is " + location);
+  var trainline = $('#trainline').val();
+  console.log("Trainline is " + trainline);
   if(data[location] !== undefined ) {
     $('#results').append('<li><a>' + data[location]["arrT"] + '</a></li>');
     console.log("The arrival time for the " + data[location]["rt"] + " line train heading "
