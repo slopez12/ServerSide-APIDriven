@@ -10,7 +10,7 @@ var data = [{
   "isDly": "0",
   "heading": "123"
 }, {
-  "staId": "40381",
+  "staId": "40380",
   "stpId": "30375",
   "staNm": "Clark\/Lake",
   "rt": "Blue",
@@ -23,12 +23,12 @@ var data = [{
 }]
 
 $('#locationform').on('submit', function(e) {
-  var staNm = $('#location').val();
-  if(data[staNm] !== undefined ) {
-    $('#results').append('<li><a href="' + data[staNm]["arrT"] + '">' +
-    staNm + '</a></li>');
+  var location = $('#location').val();
+  if(data[location] !== undefined ) {
+    $('#results').append('<li><a href="' + data[location]["arrT"] + '">' +
+    location + '</a></li>');
   } else {
-    $('#result').append('<li>' + staNm + ' not found: it may not be in the system yet; try "Galvin library"');
+    $('#result').append('<li>' + location + ' not found: it may not be in the system yet; try "Galvin library"');
   }
   e.preventDefault();
 });
