@@ -9,16 +9,9 @@
 <body>
   <h1>Find your nears trasportation arrival times</h1>
   <form method="post" action="/">
-    <label for= "station">Station</label>
+    <label for= "Station">Station</label>
     <input class= "input" type="text" name="mapid" />
     <input type="submit" name="submit" class="input" value="Find arrivals"/>
   </form>
-  <% if(mapid !== null){ %>
-    <p><%= arrT %></p>
-  <% } %>
-
-  <% if(error !== null){ %>
-    <p><%= error %></p>
-  <% } %>
 </body>
 </html>
