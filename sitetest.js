@@ -14,19 +14,20 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-  let station = req.body.ctatt.eta[0].staNm;
+  let station = req.body.mapid;
   console.log(station);
   let url = `http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=${apiKey}&mapid=${station}&outputType=JSON`;
+  console.log(url);
   request(url, function (err, response, body){
     if(err) {
       res.render('index', {arrT:null, error: 'Sorry, there are no available trains at this time'});
     } else {
-      let data = JSON.parse(body)
-      if(data.arrT == undefined) {
+      let arrT = JSON.parse(body)
+      if(arrT.ctatt == undefined) {
         res.render('index', {arrT: null, error: 'Sorrry, there is no available trains at this time'});
       } else {
-        let dataText = `The arrival time for the trains in this station are ${data.arrT}.`;
-        res.render ('index', {dataText, error: null});
+        let dataText = `The arrival time for the trains in this station are ${arrT.ctatt.tmst}.`;
+        res.render ('index', {arrT: dataText, error: null});
       }
     }
   });
