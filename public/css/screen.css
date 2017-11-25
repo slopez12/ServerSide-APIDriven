@@ -82,12 +82,11 @@ body {
 	margin-bottom: .5em;
 	text-align: center;
 	background-color: #212930;
-	padding: .5em;
 }
 
-#locationform {
-	padding-left: 8em;
+#stationform {
 	padding-top: 2em;
+	text-align: center;
 }
 
 .formstyle {
