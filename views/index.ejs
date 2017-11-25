@@ -13,5 +13,12 @@
     <input class= "input" type="text" name="mapid" id="mapid" />
     <input type="submit" name="submit" class="input" id="submit" value="Find arrivals"/>
   </form>
+  <% if(arrT !== null){ %>
+          <p><%= arrT %></p>
+        <% } %>
+
+        <% if(arrT !== null){ %>
+          <p><%= error %></p>
+        <% } %>
 </body>
 </html>
