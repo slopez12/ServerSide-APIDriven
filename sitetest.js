@@ -26,7 +26,7 @@ app.post('/', function (req, res) {
       if(arrT.ctatt == undefined) {
         res.render('index', {arrT: null, error: 'Sorrry, there is no available trains at this time'});
       } else {
-        let dataText = `The arrival time for the trains in this station are ${arrT.ctatt.tmst}.`;
+        let dataText = `The arrival time for the ${arrT.ctatt.eta[0].rt} line towards ${arrT.ctatt.eta[0].destNm} at ${arrT.ctatt.eta[0].staNm} is ${arrT.ctatt.eta[0].arrT}.`;
         res.render ('index', {arrT: dataText, error: null});
       }
     }

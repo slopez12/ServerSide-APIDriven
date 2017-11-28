@@ -8,10 +8,15 @@
 </head>
 <body>
   <h1>Find your nears trasportation arrival times</h1>
-  <form method="post" action="/" id= "stationform">
+  <form method="post" action="/" id= "stationform"> - action:#null method=get
     <label for= "Station">Station</label>
     <input class= "input" type="text" name="mapid" id="mapid" />
     <input type="submit" name="submit" class="input" id="submit" value="Find arrivals"/>
+
+    label for "station"
+    select name="" id="station"
+      option value "111">Washington/wells</option
+
   </form>
   <% if(arrT !== null){ %>
           <p><%= arrT %></p>
