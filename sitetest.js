@@ -26,7 +26,10 @@ app.post('/', function (req, res) {
       if(arrT.ctatt == undefined) {
         res.render('index', {arrT: null, error: 'Sorrry, there is no available trains at this time'});
       } else {
-        let dataText = `The arrival time for the ${arrT.ctatt.eta[0].rt} line towards ${arrT.ctatt.eta[0].destNm} at ${arrT.ctatt.eta[0].staNm} is ${arrT.ctatt.eta[0].arrT}.`;
+        for(var i = 0; i < arrT.length; i++) {
+          console.log(arrT.length)
+          let dataText = `The arrival time for the ${arrT.ctatt.eta[i].rt} line towards ${arrT.ctatt.eta[i].destNm} at ${arrT.ctatt.eta[i].staNm} is ${arrT.ctatt.eta[i].arrT}.`;
+        }
         res.render ('index', {arrT: dataText, error: null});
       }
     }
