@@ -73,10 +73,12 @@ p {
 }
 
 ul {
-	font-size: 1.2em;
+	font-size: 1em;
 	line-height: 2em;
-	margin-left: 10em;
+	font-weight: bold;
+	margin-left: 25em;
 }
+
 #results {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	font-size: 1.5em;
@@ -106,4 +108,10 @@ ul {
   border: none;
   border-radius: 8px;
   margin: 0 10px 0 10px;
+}
+
+#train {
+	padding-top: 2em;
+	margin-left:18em;
+	width: 50%;
 }
