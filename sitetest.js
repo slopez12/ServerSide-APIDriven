@@ -12,26 +12,23 @@ app.get('/', function (req, res) {
   res.render('index.ejs', {arrT:null, error:null})
 })
 
-
 app.post('/', function (req, res) {
-  let station = req.body.mapid;
+  let station = req.body.station;
   console.log(station);
   let url = `http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=${apiKey}&mapid=${station}&outputType=JSON`;
   console.log(url);
   request(url, function (err, response, body){
     if(err) {
-      res.render('index', {arrT:null, error: 'Sorry, there are no available trains at this time'});
+      res.render('index.ejs', {arrT:null, error: 'Sorry, there are no available trains at this time'});
     } else {
       let arrT = JSON.parse(body)
-      if(arrT.ctatt == undefined) {
-        res.render('index', {arrT: null, error: 'Sorrry, there is no available trains at this time'});
-      } else {
-        for(var i = 0; i < arrT.length; i++) {
-          console.log(arrT.length)
-          let dataText = `The arrival time for the ${arrT.ctatt.eta[i].rt} line towards ${arrT.ctatt.eta[i].destNm} at ${arrT.ctatt.eta[i].staNm} is ${arrT.ctatt.eta[i].arrT}.`;
-        }
-        res.render ('index', {arrT: dataText, error: null});
+      console.log(arrT.ctatt.eta.length)
+      for(var i = 0; i < arrT.ctatt.eta.length; i++) {
+        let dataText = `The arrival time for the ${arrT.ctatt.eta[i].rt} line towards ${arrT.ctatt.eta[i].destNm} at ${arrT.ctatt.eta[i].staNm} is ${arrT.ctatt.eta[i].arrT}.`;
+        console.log(dataText);
       }
+      let dataText = `The arrival time for the ${arrT.ctatt.eta[0].rt} line towards ${arrT.ctatt.eta[0].destNm} at ${arrT.ctatt.eta[0].staNm} is ${arrT.ctatt.eta[0].arrT}.`;
+      res.render ('index.ejs', {arrT:dataText, error: null});
     }
   });
 })
