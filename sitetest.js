@@ -27,7 +27,7 @@ app.post('/', function (req, res) {
         let dataText = `The arrival time for the ${arrT.ctatt.eta[i].rt} line towards ${arrT.ctatt.eta[i].destNm} at ${arrT.ctatt.eta[i].staNm} is ${arrT.ctatt.eta[i].arrT}.`;
         console.log(dataText);
       }
-      let dataText = `The arrival time for the ${arrT.ctatt.eta[0].rt} line towards ${arrT.ctatt.eta[0].destNm} at ${arrT.ctatt.eta[0].staNm} is ${arrT.ctatt.eta[0].arrT}.`;
+      let dataText = `for the ${arrT.ctatt.eta[0].rt} line towards ${arrT.ctatt.eta[0].destNm} at ${arrT.ctatt.eta[0].staNm}, with the arrival time of ${arrT.ctatt.eta[0].arrT}.`;
       res.render ('index.ejs', {arrT:dataText, error: null});
     }
   });
