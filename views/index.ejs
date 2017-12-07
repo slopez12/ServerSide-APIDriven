@@ -159,6 +159,11 @@
     </select>
     <input type="submit" value="Find arrivals"/>
   </form>
+  <section id="Approaching">
+    <p>
+      The approaching train is ....
+    <p>
+  </section>
   <% if(arrT !== null){ %>
           <ul><%= arrT %></ul>
         <% } %>
@@ -166,5 +171,8 @@
   <% if(error !== null){ %>
           <ul><%= error %></ul>
         <% } %>
+  <figure>
+    <img id="train" src="train.JPG"/>
+  </figure>
 </body>
 </html>
