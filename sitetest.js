@@ -24,6 +24,9 @@ app.post('/', function (req, res) {
       let arrT = JSON.parse(body)
       console.log(arrT.ctatt.eta.length)
       for(var i = 0; i < arrT.ctatt.eta.length; i++) {
+        var Date = arrT.ctatt.eta[i].arrT;
+        var newDate = Date.substr(0, 10) + Date.substr(11, 8);
+        console.log(newDate);
         let dataText = `The arrival time for the ${arrT.ctatt.eta[i].rt} line towards ${arrT.ctatt.eta[i].destNm} at ${arrT.ctatt.eta[i].staNm} is ${arrT.ctatt.eta[i].arrT}.`;
         console.log(dataText);
       }
