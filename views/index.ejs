@@ -7,10 +7,14 @@
   <link rel="stylesheet" type="text/css" href="/css/screen.css">
 </head>
 <body>
-  <h1>Find your nears trasportation arrival times</h1>
-  <form method="post" action="/" id= "stationform"> - action:#null method=get
-    <label for= "stations">Station</label>
-    <select name="station" id="stations">
+  <h1>Find your CTA train arrival times</h1>
+  <p>
+    The time is the closet train arriving at the chosen station.
+  <p>
+  <form method="post" action="/" id="stationform">
+    <!-- action:#null method=get -->
+    <label for="mapid">Station</label>
+    <select name="station" id="mapid">
       <option value="40830">18th</option>
       <option value="41120">35-Bronzeville-IIT</option>
       <option value="40120">35th/Archer</option>
@@ -153,20 +157,14 @@
       <option value="40310">Western(Orange)</option>
       <option value="40540">Wilson</option>
     </select>
-    <input class= "input" type="text" name="mapid" id="mapid" />
-    <input type="submit" name="submit" class="input" id="submit" value="Find arrivals"/>
-
-    label for "station"
-    select name="" id="station"
-      option value "111">Washington/wells</option
-
+    <input type="submit" value="Find arrivals"/>
   </form>
   <% if(arrT !== null){ %>
-          <p><%= arrT %></p>
+          <ul><%= arrT %></ul>
         <% } %>
 
-        <% if(error !== null){ %>
-          <p><%= error %></p>
+  <% if(error !== null){ %>
+          <ul><%= error %></ul>
         <% } %>
 </body>
 </html>
