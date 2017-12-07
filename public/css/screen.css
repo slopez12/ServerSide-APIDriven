@@ -66,7 +66,17 @@ body {
 	background-color: #E3DCC0;
 	font-size: 18px;
 }
+p {
+	font-size: 1em;
+	margin-left: 20em;
+	padding-top: 1em;
+}
 
+ul {
+	font-size: 1.2em;
+	line-height: 2em;
+	margin-left: 10em;
+}
 #results {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	font-size: 1.5em;
@@ -86,6 +96,7 @@ body {
 
 #stationform {
 	padding-top: 2em;
+	padding-bottom: 2em;
 	text-align: center;
 }
 
